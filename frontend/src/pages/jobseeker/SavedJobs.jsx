@@ -45,7 +45,7 @@ const SavedJobs = () => {
 
   const fetchSavedJobs = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/users/saved-jobs', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/users/saved-jobs', {
         headers: { Authorization: 'Bearer ' + token },
       })
       const data = await res.json()
@@ -58,7 +58,7 @@ const SavedJobs = () => {
 
   const handleUnsave = async (jobId) => {
     try {
-      const res = await fetch('http://localhost:5000/api/users/save-job/' + jobId, {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/users/save-job/' + jobId, {
         method: 'PUT',
         headers: { Authorization: 'Bearer ' + token },
       })

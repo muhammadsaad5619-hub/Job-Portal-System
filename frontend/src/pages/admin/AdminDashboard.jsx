@@ -50,7 +50,7 @@ const AdminDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/admin/stats', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/admin/stats', {
         headers: { Authorization: 'Bearer ' + token },
       })
       const data = await res.json()

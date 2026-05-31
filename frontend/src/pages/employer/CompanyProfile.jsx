@@ -35,7 +35,7 @@ const CompanyProfile = () => {
 
   const fetchCompany = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/company/profile', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/company/profile', {
         headers: { Authorization: 'Bearer ' + token },
       })
       const data = await res.json()
@@ -67,7 +67,7 @@ const CompanyProfile = () => {
     setError('')
     setSuccess('')
     try {
-      const res = await fetch('http://localhost:5000/api/company/profile', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/company/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

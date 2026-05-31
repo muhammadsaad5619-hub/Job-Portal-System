@@ -27,7 +27,7 @@ const ManageJobs = () => {
 
   const fetchJobs = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/jobs/employer/myjobs', {
+      const response = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/jobs/employer/myjobs', {
         headers: { Authorization: `Bearer ${token}` },
       })
       const data = await response.json()
@@ -44,7 +44,7 @@ const ManageJobs = () => {
     if (!window.confirm('Are you sure you want to delete this job?')) return
     setDeletingId(jobId)
     try {
-      const response = await fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+      const response = await fetch(`https://job-portal-system-production-cd99.up.railway.app/api/jobs/${jobId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       })

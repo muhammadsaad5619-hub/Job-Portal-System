@@ -29,7 +29,7 @@ const JobSearch = () => {
       if (f.jobType) params.append('jobType', f.jobType)
       if (f.location) params.append('location', f.location)
 
-      const res = await fetch('http://localhost:5000/api/jobs?' + params.toString())
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/jobs?' + params.toString())
       const data = await res.json()
       if (data.success) setJobs(data.data)
     } catch (err) {
@@ -40,7 +40,7 @@ const JobSearch = () => {
 
   const fetchSavedJobs = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/users/saved-jobs', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/users/saved-jobs', {
         headers: { Authorization: 'Bearer ' + token },
       })
       const data = await res.json()
@@ -53,7 +53,7 @@ const JobSearch = () => {
   const handleSaveToggle = async (jobId) => {
     if (!user) { navigate('/login'); return }
     try {
-      const res = await fetch('http://localhost:5000/api/users/save-job/' + jobId, {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/users/save-job/' + jobId, {
         method: 'PUT',
         headers: { Authorization: 'Bearer ' + token },
       })

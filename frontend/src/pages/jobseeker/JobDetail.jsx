@@ -23,7 +23,7 @@ const JobDetail = () => {
 
   const fetchJob = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/jobs/' + id)
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/jobs/' + id)
       const data = await res.json()
       if (data.success) setJob(data.data)
     } catch (err) {
@@ -64,7 +64,7 @@ const JobDetail = () => {
       formData.append('coverLetter', coverLetter)
       formData.append('resume', resumeFile)
 
-      const res = await fetch('http://localhost:5000/api/applications/' + id, {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/applications/' + id, {
         method: 'POST',
         headers: {
           Authorization: 'Bearer ' + token,

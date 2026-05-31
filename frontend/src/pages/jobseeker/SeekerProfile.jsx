@@ -34,7 +34,7 @@ const SeekerProfile = () => {
 
   const fetchProfile = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/auth/me', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/auth/me', {
         headers: { Authorization: 'Bearer ' + token },
       })
       const data = await res.json()
@@ -68,7 +68,7 @@ const SeekerProfile = () => {
         ? formData.skills.split(',').map(s => s.trim()).filter(s => s)
         : []
 
-      const res = await fetch('http://localhost:5000/api/users/profile', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/users/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -29,13 +29,13 @@ const ViewApplicants = () => {
 
   const fetchApplicants = async () => {
     try {
-      const res1 = await fetch('http://localhost:5000/api/applications/job/' + jobId, {
+      const res1 = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/applications/job/' + jobId, {
         headers: { Authorization: 'Bearer ' + token },
       })
       const data1 = await res1.json()
       if (data1.success) setApplicants(data1.data)
 
-      const res2 = await fetch('http://localhost:5000/api/jobs/' + jobId)
+      const res2 = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/jobs/' + jobId)
       const data2 = await res2.json()
       if (data2.success) setJobTitle(data2.data.title)
     } catch (err) {
@@ -47,7 +47,7 @@ const ViewApplicants = () => {
   const handleStatusUpdate = async (applicationId, newStatus) => {
     setUpdatingId(applicationId)
     try {
-      const res = await fetch('http://localhost:5000/api/applications/' + applicationId + '/status', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/applications/' + applicationId + '/status', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -300,7 +300,7 @@ const ViewApplicants = () => {
 
                           {app.resumeUrl && (
                             <button
-                              onClick={() => window.open('http://localhost:5000/' + app.resumeUrl, '_blank')}
+                              onClick={() => window.open('https://job-portal-system-production-cd99.up.railway.app/' + app.resumeUrl, '_blank')}
                               style={{
                                 background: 'rgba(107,143,62,0.15)',
                                 border: '1px solid rgba(107,143,62,0.4)',

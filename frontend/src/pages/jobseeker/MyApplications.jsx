@@ -46,7 +46,7 @@ const MyApplications = () => {
 
   const fetchApplications = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/applications/myapplications', {
+      const res = await fetch('https://job-portal-system-production-cd99.up.railway.app/api/applications/myapplications', {
         headers: { Authorization: 'Bearer ' + token },
       })
       const data = await res.json()
