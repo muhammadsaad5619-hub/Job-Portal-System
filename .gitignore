@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables - NEVER upload these!
+.env
+*/.env
+backend/.env
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Uploaded files (resumes etc)
+backend/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
